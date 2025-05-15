@@ -8,7 +8,7 @@ from sklearn.svm import SVC
 # 0 -> Galaxy
 # 1 -> QSO
 # 2 -> Star
-activity_labels = [
+star_labels = [
     'Galaxy', 'QSO', 'Star'
 ]
 
@@ -39,6 +39,6 @@ y_pred = clf.predict(X_test)
 print(f"Score: {f1_score(y_test, y_pred, average='weighted'):.3f}")
 
 cm = confusion_matrix(y_test, clf.predict(X_test), normalize="true")
-disp_cm = ConfusionMatrixDisplay(cm, display_labels=activity_labels)
+disp_cm = ConfusionMatrixDisplay(cm, display_labels=star_labels)
 disp_cm.plot()
 plt.show()
